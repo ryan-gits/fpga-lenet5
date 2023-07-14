@@ -9,6 +9,7 @@ logic                          tready;
 logic                          tkeep;
 logic [$clog2(DATA_WIDTH)-1:0] tstrb;
 logic                          tlast;
+logic                          tuser;
 
 modport main (
   input  clock,
@@ -18,7 +19,8 @@ modport main (
   input  tready,
   output tkeep,
   output tstrb,
-  output tlast
+  output tlast,
+  output tuser
 );
 
 modport peripheral (
@@ -29,7 +31,8 @@ modport peripheral (
   output tready,
   input  tkeep,
   input  tstrb,
-  input  tlast
+  input  tlast,
+  input  tuser
 );
 
 endinterface
